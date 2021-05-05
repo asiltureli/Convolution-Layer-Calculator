@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ConvNet Size Calculator</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width">
+        <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <h1> ConvNet Output Size Calculator </h1>
+    <div id="col1">
+    <dd1>Convolution Dimension: <select name="subject" id="convDim" onchange="update()">
+        <option value="0" selected="selected">Select Dimension</option>
+        <option value="1" >Conv 1D </option>
+        <option value="2" >Conv 2D </option>
+        <option value="3" >Conv 3D </option>
+        <option value="4" >TransposedConv 1D </option>
+        <option value="5" >TransposedConv 2D </option>
+        <option value="6" >TransposedConv 3D </option>
+      </select>
+    </dd1>
+  </div>
+  <br>
+  <div id= "input_size">
+    Input:  
+      <label class="width">Width W: <input type="text" size = "1" id = "width_in" value=128 onchange="update()"></input></label>
+      <label class="height">Height H: <input type="text" size = "1" id = "height_in" value=128 onchange="update()"></input></label>
+      <label class="depth">Depth D: <input type="text" size = "1" id = "depth_in" value=128 onchange="update()"></input></label>
+    </div>
+    <br>
+    <div id="col2">
+        Convolution Parameters:
+      </div>
+    <div>
+        <label class="Kernel">Kernel Size: 
+          <input type="text" id = "kernel_w" value=1 size = "1" onchange="update()"></input> 
+          x 
+          <input type="text" id = "kernel_h" value=1 size = "1" onchange="update()"></input>
+          x
+        <input type="text" id = "kernel_d" value=1 size = "1" onchange="update()"></input></label>
+      </div>
+      <br>
+    <div>
+        <label class="Stride">Stride: 
+          <input type="text" id = "stride_w" value=1 size = "1" onchange="update()"></input>
+          x
+          <input type="text" id = "stride_h" value=1 size = "1" onchange="update()"></input>
+          x
+          <input type="text" id = "stride_d" value=1 size = "1" onchange="update()"></input>
+        </label>
+      </div>
+      <div>
+        <label class="Dilation">Dilation: <input type="text" id = "dilation" value=1 size = "1" onchange="update()"></input></label>
+        <label class="Padding">Padding: <input type="text" id = "padding" value=0 size = "1" onchange="update()"></input></label>
+    </div>
+    <br>
+    <div id="result">
+        Convolution Result:
+        <label class="output">
+          <output name="w_in" id ="w_in"></output> 
+          <output name="h_in_x" id ="h_in_x" >x</output> 
+          <output name="h_in" id = "h_in"></output> 
+          <output name="d_in_x" id ="d_in_x">x</output>  
+          <output name="d_in" id = "d_in"></output></label>
+        &rarr;
+        <label class="output">
+          <output name="w_out" id ="w_out"></output> 
+          <output name="h_out_x" id ="h_out_x">x</output> 
+          <output name="h_out" id ="h_out"></output>
+          <output name="d_out_x" id ="d_out_x">x</output> 
+          <output name="d_out" id = "d_out"></output>
+      </label>
+    </div>
+    <br>
+    <br>
+    <button type="button" onclick="reset_to_default()">Reset to default </button>
+    <br>
+    <br>
+    <br>
+    <br>
+    <div id="sourceconv">
+      <label class = "sourceconv">
+        <a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv1d.html#torch.nn.Conv1d">Source of Conv Calculation</a>
+      </label>
+    </div>
+    <div id="sourcetransconv">
+      <label class = "sourcetransconv">
+        <a href="https://pytorch.org/docs/stable/generated/torch.nn.Conv1d.html#torch.nn.Conv1d">Source of Transposed Conv Calculation</a>
+      </label>
+    </div>
+    <div id="ps">
+      <label class = "prog">
+        Still in progress...
+      </label>
+    </div>
+  </div>
+  </body>
+  <script src="js/script.js" charset="utf-8"></script>
+</html>
