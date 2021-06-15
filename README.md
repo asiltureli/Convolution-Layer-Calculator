@@ -1,6 +1,6 @@
 # ConvNet Size Calculator on asiltureli.github.io
 
-  https://asiltureli.github.io/
+  https://asiltureli.github.io/convnetcalculator/
 
 Allows you to find the best convolutional layer hyperparameters for down-/upsampling. Works for 1D, 2D and 3D.   
   
